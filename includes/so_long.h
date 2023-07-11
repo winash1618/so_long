@@ -32,18 +32,22 @@ typedef struct s_player
 {
 	int     x;
 	int     y;
-	int     move;
-	int     collect;
-}               t_player;
+	int     move; // Number of steps player moved
+	int     collect; // Number of collectible collected
+}          t_player;
+
+typedef struct s_mlx {
+	void		*mlx;
+	void		*win;
+}          t_mlx;
 
 typedef struct s_game
 {
-	void    *mlx;
-	void    *win;
-	t_map   map;
-	t_img   img;
+	t_map       *map;
+	t_img       *img;
+  t_mlx       *mlx;
 	t_player    player;
-}               t_game;
+}              t_game;
 
 
 

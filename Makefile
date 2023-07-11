@@ -2,7 +2,7 @@ NAME        := so_long
 
 CC          := gcc
 
-FLAGS       := -Wall -Wextra -Werror 
+FLAGS       := -Wall -Wextra -Werror -g3
 
 INCLUDES    := -I includes -I mlx
 
