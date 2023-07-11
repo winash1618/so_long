@@ -2,29 +2,29 @@
 
 int	ft_init_game(t_game *game, char *map_path)
 {
-	// if (ft_parse_map(game, map_path) == -1)
-	// 	return (-1);
-	// return (0);
-  (void) map_path;
   (void) game;
-  return (1);
+  (void) map_path;
+	if (ft_parse_map(game, map_path) == -1)
+		return (-1);
+	return (1);
 }
 
 int main(int argc, char **argv)
 {
   // (void) argc;
-  // (void) argv;
+  (void) argv;
 	t_game game;
 
 	if (argc != 2)
 		return (0);
-	// if (ft_init_game(&game, argv[1]) == -1)
-	// 	return (0);
-	// char **map = parse_map(argv[1]);
-	// (void)map;
+	if (ft_init_game(&game, argv[1]) == -1)
+		return (0);
+	char **map = parse_map(argv[1]);
 	game.mlx = mlx_init();
 	game.win = mlx_new_window(game.mlx, 1000, 1000, "so_long");
 
+ 
+    }
 	mlx_loop(game.mlx);
 	return (0);
 }

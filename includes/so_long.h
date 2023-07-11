@@ -1,13 +1,14 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
-#include <math.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <fcntl.h>
-#include <mlx.h>
-#define WIN_WIDTH 1000
-#define WIN_HEIGHT 1000
+# include <math.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <fcntl.h>
+# include <mlx.h>
+# include "../libft/includes/libft.h"
+# define WIN_WIDTH 1000
+# define WIN_HEIGHT 1000
 
 typedef struct s_map
 {
