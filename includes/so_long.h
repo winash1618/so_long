@@ -49,6 +49,4 @@ typedef struct s_game
 	t_player    player;
 }              t_game;
 
-
-
 #endif

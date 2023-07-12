@@ -19,6 +19,33 @@ char	*ft_free(char *str, char *s)
 	return (NULL);
 }
 
+char	*ft_strjoin_m(char *s1, char *s2)
+{
+	char	*new;
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	if (!s1)
+	{
+		s1 = (char *)malloc(sizeof(char) * 1);
+		s1[i] = '\0';
+	}
+	new = (char *)malloc(sizeof (char) * (ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!new)
+		return (0);
+	while (s1[i] != '\0')
+	{
+		new[i] = s1[i];
+		i++;
+	}
+	while (s2[j] != '\0')
+		new[i++] = s2[j++];
+	new[i] = '\0';
+	free (s1);
+	return (new);
+}
 char	*ft_reader(int fd, char *s, size_t bf)
 {
 	char	*str;
@@ -37,9 +64,9 @@ char	*ft_reader(int fd, char *s, size_t bf)
 			return (NULL);
 		}
 		str[i] = '\0';
-		s = ft_strjoin(s, str);
+		s = ft_strjoin_m(s, str);
 	}
-	if (s && s[0] == '\0')
+	if (s[0] == '\0')
 	{
 		ft_free(str, s);
 		return (NULL);
