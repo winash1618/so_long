@@ -49,4 +49,14 @@ typedef struct s_game
 	t_player    player;
 }              t_game;
 
+char *str_modify_safe(char *line);
+void parse_exit(t_game *game);
+void game_exit(t_game *game);
+int check_line_for_unknown_characters(char *line);
+int check_line_for_map_errors(char *line, size_t width);
+void get_map_dimension(t_game *game, int fd);
+void parse_map(t_game *game, int fd);
+void check_map_validity(t_game *game);
+
+
 #endif

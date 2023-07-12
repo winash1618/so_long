@@ -6,7 +6,7 @@ FLAGS       := -Wall -Wextra -Werror -g3
 
 INCLUDES    := -I includes -I mlx
 
-SRCS        := srcs/main.c srcs/parse_map.c
+SRCS        := srcs/main.c srcs/parse_map.c srcs/exit_utils.c srcs/error_check.c
                           
 OBJS        := $(SRCS:.c=.o)
 
