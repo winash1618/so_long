@@ -1,5 +1,20 @@
 #include "so_long.h"
 
+void free_double_str(char **str)
+{
+   int i;
+
+  i = 0;
+  while (str[i])
+  {
+    printf("%s\n", str[i]);
+    free(str[i]);
+    i++;
+  }
+  if (str)
+    free(str);
+}
+
 void parse_exit(t_game *game)
 {
   int i;
@@ -14,6 +29,7 @@ void parse_exit(t_game *game)
     free(game->map->map);
   game_exit(game);
 }
+
 void game_exit(t_game *game)
 {
   if (game->map)

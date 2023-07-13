@@ -1,5 +1,5 @@
 compile = "make"
-run = "./so_long"
+run = "./so_long maps/map.ber"
 hidden = ["main", "main-debug", "**/*.o", "**/*.d", ".ccls-cache", "Makefile"]
 
 [nix]
