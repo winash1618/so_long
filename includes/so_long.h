@@ -45,9 +45,20 @@ typedef struct s_game
 {
 	t_map       *map;
 	t_img       *img;
+  t_img       *pic[5];
   t_mlx       *mlx;
 	t_player    player;
 }              t_game;
+
+enum	e_type
+{
+	PLAYER,
+  EXIT,
+  COIN,
+  FLOOR,
+  WALL
+};
+
 
 char *str_modify_safe(char *line);
 void parse_exit(t_game *game);
