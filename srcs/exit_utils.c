@@ -15,7 +15,7 @@ void free_double_str(char **str)
     free(str);
 }
 
-void parse_exit(t_game *game)
+int parse_exit(t_game *game)
 {
   int i;
 
@@ -28,6 +28,7 @@ void parse_exit(t_game *game)
   if (game->map->map)
     free(game->map->map);
   game_exit(game);
+  return (0);
 }
 
 void game_exit(t_game *game)

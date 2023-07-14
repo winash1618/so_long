@@ -10,6 +10,24 @@
 # define WIN_WIDTH 1000
 # define WIN_HEIGHT 1000
 
+# ifdef linux
+#  define ESC_KEY 65307
+#  define W_KEY 119
+#  define A_KEY 97
+#  define S_KEY 115
+#  define D_KEY 100
+#  define Q_KEY 81
+#  define E_KEY 69
+#  define UP_KEY 65362
+#  define DOWN_KEY 65364
+#  define LEFT_KEY 65361
+#  define RIGHT_KEY 65363
+#  define M_KEY 109
+#  define H_KEY 104
+#  define Q_KEY 81
+#  define E_KEY 69
+# endif
+
 typedef struct s_map
 {
 	int     width;
@@ -61,7 +79,7 @@ enum	e_type
 
 
 char *str_modify_safe(char *line);
-void parse_exit(t_game *game);
+int parse_exit(t_game *game);
 void game_exit(t_game *game);
 int check_line_for_unknown_characters(char *line);
 int check_line_for_map_errors(char *line, size_t width);
