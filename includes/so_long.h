@@ -87,6 +87,8 @@ void get_map_dimension(t_game *game, int fd);
 void parse_map(t_game *game, int fd);
 void check_map_validity(t_game *game);
 void free_double_str(char **str);
-
+int	event_handler(int keycode, t_game *game);
+void render_image(t_game *game);
+void check_valid_path(t_game *game);
 
 #endif

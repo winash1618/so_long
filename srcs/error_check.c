@@ -1,33 +1,5 @@
 #include "so_long.h"
 
-int check_line_for_unknown_characters(char *line)
-{
-  while (*line)
-  {
-    if (!(*line == '1' || *line  == '0' || *line == 'P' || *line == 'E' || *line == 'C'))
-      return (-1);
-    line++;
-  }
-  return (1);
-}
-
-int check_line_for_map_errors(char *line, size_t width)
-{
-  if (check_line_for_unknown_characters(line) == -1)
-  {
-    printf("Map Error1\n");
-    free(line);
-    return (-1);
-  }
-  if (ft_strlen(line) != width)
-  {
-    printf("Map Error2\n");
-    free(line);
-    return(-1);
-  }
-  return (1);
-}
-
 int count_element(char *line, char c)
 {
   int i;

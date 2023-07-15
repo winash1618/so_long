@@ -1,11 +1,27 @@
 {
   "files": {
+    "srcs/game_setup.c": [
+      {
+        "id": "625ac1c0-56ff-4184-8494-37e30bdba7bc",
+        "line": 1,
+        "version": 23,
+        "index": 0
+      }
+    ],
+    "srcs/key_events.c": [
+      {
+        "id": "856fa601-e9a8-4f6b-9179-1b87ff0d3edc",
+        "line": 14,
+        "version": 1187,
+        "index": 256
+      }
+    ],
     "srcs/main.c": [
       {
         "id": "910e6cb6-69cc-4e6f-9399-615377ec4b79",
-        "line": 56,
-        "version": 6846,
-        "index": 2179
+        "line": 43,
+        "version": 6870,
+        "index": 1973
       }
     ]
   }
