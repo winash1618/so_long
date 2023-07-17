@@ -35,8 +35,6 @@ void game_exit(t_game *game)
 {
   if (game->map)
     free(game->map);
-  if (game->mlx)
-    free(game->mlx);
   if (game->img)
     free(game->img);
   mlx_destroy_image(game->mlx->mlx, game->pic[PLAYER]->img);
@@ -46,6 +44,8 @@ void game_exit(t_game *game)
   mlx_destroy_image(game->mlx->mlx, game->pic[WALL]->img);
   mlx_clear_window(game->mlx->mlx, game->mlx->win);
   mlx_destroy_window(game->mlx->mlx, game->mlx->win);
+  if (game->mlx)
+    free(game->mlx);
   free(game->pic[PLAYER]);
   free(game->pic[EXIT]);
   free(game->pic[COIN]);
