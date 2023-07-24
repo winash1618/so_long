@@ -10,6 +10,14 @@
 # define WIN_WIDTH 1000
 # define WIN_HEIGHT 1000
 
+# ifndef darwin
+#  define ESC_KEY 53
+#  define W_KEY 13
+#  define A_KEY 0
+#  define S_KEY 1
+#  define D_KEY 2
+# endif
+
 # ifdef linux
 #  define ESC_KEY 65307
 #  define W_KEY 119

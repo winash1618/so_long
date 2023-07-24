@@ -10,8 +10,6 @@ SRCS        := srcs/main.c srcs/parse_map.c srcs/exit_utils.c srcs/error_check.c
                           
 OBJS        := $(SRCS:.c=.o)
 
-LIBFT       := libft/libft.a
-
 .c.o:
 	${CC} ${FLAGS} ${INCLUDES} -c $< -o ${<:.c=.o}
 
@@ -25,13 +23,11 @@ RM		    := rm -f
 
 UNAME		:=	$(shell uname)
 
-all:		${NAME}
+all:		libft ${NAME}
 
-$(LIBFT):
-			@ $(MAKE) -C libft all
 
 ifeq ($(UNAME), Darwin)
-$(NAME): ${LIBFT} ${OBJS}
+$(NAME): libft/libft.a ${OBJS}
 			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
 			@ $(MAKE) -C mlx all >/dev/null 2>&1
 			@ cp ./mlx/libmlx.a .
@@ -47,6 +43,9 @@ $(NAME): ${LIBFT} ${OBJS}
 			$(CC) $(CFLAGS) -g3 -o $(NAME) $(OBJS) -Imlx_linux -Lmlx_linux -lmlx -lmlx_Linux -L/usr/lib -lXext -lX11 -lm libft/libft.a
 			@echo "$(GREEN)$(NAME) created[0m ✔️"
 endif
+
+libft:
+			@make -C libft all
 
 ifeq ($(UNAME), Darwin)
 clean:
@@ -83,6 +82,6 @@ endif
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all libft clean fclean re
 
 
